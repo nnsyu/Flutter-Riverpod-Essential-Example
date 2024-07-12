@@ -11,7 +11,7 @@ _$HotelImpl _$$HotelImplFromJson(Map<String, dynamic> json) => _$HotelImpl(
       classification: (json['classification'] as num).toInt(),
       city: json['city'] as String,
       parkingLotCapacity: (json['parking_lot_capacity'] as num?)?.toInt(),
-      revies: (json['revies'] as List<dynamic>?)
+      reviews: (json['reviews'] as List<dynamic>?)
               ?.map((e) => Review.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -23,7 +23,7 @@ Map<String, dynamic> _$$HotelImplToJson(_$HotelImpl instance) =>
       'classification': instance.classification,
       'city': instance.city,
       'parking_lot_capacity': instance.parkingLotCapacity,
-      'revies': instance.revies.map((e) => e.toJson()).toList(),
+      'reviews': instance.reviews.map((e) => e.toJson()).toList(),
     };
 
 _$ReviewImpl _$$ReviewImplFromJson(Map<String, dynamic> json) => _$ReviewImpl(

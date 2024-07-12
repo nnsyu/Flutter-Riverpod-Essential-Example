@@ -25,7 +25,7 @@ mixin _$Hotel {
   String get city => throw _privateConstructorUsedError;
   @JsonKey(name: 'parking_lot_capacity')
   int? get parkingLotCapacity => throw _privateConstructorUsedError;
-  List<Review> get revies => throw _privateConstructorUsedError;
+  List<Review> get reviews => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $HotelCopyWith<$Res> {
       int classification,
       String city,
       @JsonKey(name: 'parking_lot_capacity') int? parkingLotCapacity,
-      List<Review> revies});
+      List<Review> reviews});
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$HotelCopyWithImpl<$Res, $Val extends Hotel>
     Object? classification = null,
     Object? city = null,
     Object? parkingLotCapacity = freezed,
-    Object? revies = null,
+    Object? reviews = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -81,9 +81,9 @@ class _$HotelCopyWithImpl<$Res, $Val extends Hotel>
           ? _value.parkingLotCapacity
           : parkingLotCapacity // ignore: cast_nullable_to_non_nullable
               as int?,
-      revies: null == revies
-          ? _value.revies
-          : revies // ignore: cast_nullable_to_non_nullable
+      reviews: null == reviews
+          ? _value.reviews
+          : reviews // ignore: cast_nullable_to_non_nullable
               as List<Review>,
     ) as $Val);
   }
@@ -101,7 +101,7 @@ abstract class _$$HotelImplCopyWith<$Res> implements $HotelCopyWith<$Res> {
       int classification,
       String city,
       @JsonKey(name: 'parking_lot_capacity') int? parkingLotCapacity,
-      List<Review> revies});
+      List<Review> reviews});
 }
 
 /// @nodoc
@@ -119,7 +119,7 @@ class __$$HotelImplCopyWithImpl<$Res>
     Object? classification = null,
     Object? city = null,
     Object? parkingLotCapacity = freezed,
-    Object? revies = null,
+    Object? reviews = null,
   }) {
     return _then(_$HotelImpl(
       name: null == name
@@ -138,9 +138,9 @@ class __$$HotelImplCopyWithImpl<$Res>
           ? _value.parkingLotCapacity
           : parkingLotCapacity // ignore: cast_nullable_to_non_nullable
               as int?,
-      revies: null == revies
-          ? _value._revies
-          : revies // ignore: cast_nullable_to_non_nullable
+      reviews: null == reviews
+          ? _value._reviews
+          : reviews // ignore: cast_nullable_to_non_nullable
               as List<Review>,
     ));
   }
@@ -155,8 +155,8 @@ class _$HotelImpl with DiagnosticableTreeMixin implements _Hotel {
       required this.classification,
       required this.city,
       @JsonKey(name: 'parking_lot_capacity') this.parkingLotCapacity,
-      final List<Review> revies = const []})
-      : _revies = revies;
+      final List<Review> reviews = const []})
+      : _reviews = reviews;
 
   factory _$HotelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HotelImplFromJson(json);
@@ -170,18 +170,18 @@ class _$HotelImpl with DiagnosticableTreeMixin implements _Hotel {
   @override
   @JsonKey(name: 'parking_lot_capacity')
   final int? parkingLotCapacity;
-  final List<Review> _revies;
+  final List<Review> _reviews;
   @override
   @JsonKey()
-  List<Review> get revies {
-    if (_revies is EqualUnmodifiableListView) return _revies;
+  List<Review> get reviews {
+    if (_reviews is EqualUnmodifiableListView) return _reviews;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_revies);
+    return EqualUnmodifiableListView(_reviews);
   }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Hotel(name: $name, classification: $classification, city: $city, parkingLotCapacity: $parkingLotCapacity, revies: $revies)';
+    return 'Hotel(name: $name, classification: $classification, city: $city, parkingLotCapacity: $parkingLotCapacity, reviews: $reviews)';
   }
 
   @override
@@ -193,7 +193,7 @@ class _$HotelImpl with DiagnosticableTreeMixin implements _Hotel {
       ..add(DiagnosticsProperty('classification', classification))
       ..add(DiagnosticsProperty('city', city))
       ..add(DiagnosticsProperty('parkingLotCapacity', parkingLotCapacity))
-      ..add(DiagnosticsProperty('revies', revies));
+      ..add(DiagnosticsProperty('reviews', reviews));
   }
 
   @override
@@ -207,13 +207,13 @@ class _$HotelImpl with DiagnosticableTreeMixin implements _Hotel {
             (identical(other.city, city) || other.city == city) &&
             (identical(other.parkingLotCapacity, parkingLotCapacity) ||
                 other.parkingLotCapacity == parkingLotCapacity) &&
-            const DeepCollectionEquality().equals(other._revies, _revies));
+            const DeepCollectionEquality().equals(other._reviews, _reviews));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, classification, city,
-      parkingLotCapacity, const DeepCollectionEquality().hash(_revies));
+      parkingLotCapacity, const DeepCollectionEquality().hash(_reviews));
 
   @JsonKey(ignore: true)
   @override
@@ -235,7 +235,7 @@ abstract class _Hotel implements Hotel {
       required final int classification,
       required final String city,
       @JsonKey(name: 'parking_lot_capacity') final int? parkingLotCapacity,
-      final List<Review> revies}) = _$HotelImpl;
+      final List<Review> reviews}) = _$HotelImpl;
 
   factory _Hotel.fromJson(Map<String, dynamic> json) = _$HotelImpl.fromJson;
 
@@ -249,7 +249,7 @@ abstract class _Hotel implements Hotel {
   @JsonKey(name: 'parking_lot_capacity')
   int? get parkingLotCapacity;
   @override
-  List<Review> get revies;
+  List<Review> get reviews;
   @override
   @JsonKey(ignore: true)
   _$$HotelImplCopyWith<_$HotelImpl> get copyWith =>

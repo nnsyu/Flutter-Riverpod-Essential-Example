@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_sample/pages/collections_page.dart';
+import 'package:freezed_sample/pages/hotel_list_page.dart';
 import 'package:freezed_sample/pages/method_page.dart';
 import 'package:freezed_sample/pages/mutable_person_page.dart';
 import 'package:freezed_sample/pages/person_page.dart';
@@ -58,6 +59,10 @@ class MyHomePage extends StatelessWidget {
             CustomButton(
               title: 'Method',
               child: MethodPage(),
+            ),
+            CustomButton(
+              title: 'Hotel List',
+              child: HotelListPage(),
             ),
           ],
         ),

@@ -12,7 +12,7 @@ class Hotel with _$Hotel {
     required int classification,
     required String city,
     @JsonKey(name: 'parking_lot_capacity') int? parkingLotCapacity,
-    @Default([]) List<Review> revies,
+    @Default([]) List<Review> reviews,
   }) = _Hotel;
 
   factory Hotel.fromJson(Map<String, dynamic> json) => _$HotelFromJson(json);
