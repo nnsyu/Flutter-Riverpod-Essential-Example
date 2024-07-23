@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:state_notifier_provider/pages/todos_provider.dart';
+
+import 'todos_provider.dart';
 
 class TodosPage extends ConsumerWidget {
   const TodosPage({super.key});
@@ -17,9 +18,7 @@ class TodosPage extends ConsumerWidget {
       body: Column(
         children: [
           const AddTodo(),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Expanded(
             child: ListView(
               children: [
@@ -27,17 +26,17 @@ class TodosPage extends ConsumerWidget {
                   CheckboxListTile(
                     controlAffinity: ListTileControlAffinity.leading,
                     value: todo.completed,
-                    onChanged: (value) => ref
-                        .read(todosProvider.notifier)
-                        .toggleTodo(id: todo.id),
+                    onChanged: (value) {
+                      ref.read(todosProvider.notifier).toggleTodo(todo.id);
+                    },
                     title: Text(todo.desc),
                     secondary: IconButton(
-                      onPressed: () => ref
-                          .read(todosProvider.notifier)
-                          .removeTodo(id: todo.id),
+                      onPressed: () {
+                        ref.read(todosProvider.notifier).removeTodo(todo.id);
+                      },
                       icon: const Icon(Icons.delete),
                     ),
-                  )
+                  ),
               ],
             ),
           ),
@@ -66,9 +65,7 @@ class _AddTodoState extends ConsumerState<AddTodo> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: TextField(
         controller: textController,
         decoration: const InputDecoration(
@@ -76,7 +73,7 @@ class _AddTodoState extends ConsumerState<AddTodo> {
         ),
         onSubmitted: (desc) {
           if (desc.isNotEmpty) {
-            ref.read(todosProvider.notifier).addTodo(desc: desc);
+            ref.read(todosProvider.notifier).addTodo(desc);
             textController.clear();
           }
         },
